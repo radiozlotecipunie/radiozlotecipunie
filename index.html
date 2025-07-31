@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Radio Złote Cipunie</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #222;
+      color: #f5c518;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      background: #444;
+      border: none;
+      color: #f5c518;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #666;
+    }
+    audio {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Radio Złote Cipunie</h1>
+
+  <!-- Przykładowe piosenki -->
+  <div id="playlist">
+    <button onclick="playSong('piosenka1.mp3')">Piosenka 1</button>
+    <button onclick="playSong('piosenka2.mp3')">Piosenka 2</button>
+    <button onclick="playSong('piosenka3.mp3')">Piosenka 3</button>
+  </div>
+
+  <audio id="audioPlayer" controls>
+    Twoja przeglądarka nie wspiera odtwarzacza audio.
+  </audio>
+
+  <script>
+    const player = document.getElementById('audioPlayer');
+
+    function playSong(filename) {
+      player.src = filename;
+      player.play();
+    }
+  </script>
+
+</body>
+</html>
