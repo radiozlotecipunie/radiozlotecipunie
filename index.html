@@ -1,62 +1,51 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Radio Złote Cipunie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Discord Radio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #222;
-      color: #f5c518;
-      text-align: center;
-      padding: 20px;
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
     }
-    h1 {
-      margin-bottom: 20px;
-    }
-    button {
-      margin: 5px;
-      padding: 10px 20px;
-      background: #444;
-      border: none;
-      color: #f5c518;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 5px;
-    }
-    button:hover {
-      background: #666;
-    }
-    audio {
-      margin-top: 20px;
-      width: 100%;
-      max-width: 400px;
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-900 text-white font-sans">
 
-  <h1>Radio Złote Cipunie</h1>
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 fade-in">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-blue-400 mb-4">🎧 My Discord Radio</h1>
+    <p class="text-xl text-gray-300 mb-8">Non-stop music, chill vibes, and a community that rocks 🤘</p>
+    <a href="https://discord.com/invite/your-invite-code" target="_blank" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-full flex items-center space-x-2 text-lg shadow-lg">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord Logo" class="w-6 h-6 invert" />
+      <span>Join Us on Discord</span>
+    </a>
+  </section>
 
-  <!-- Przykładowe piosenki -->
-  <div id="playlist">
-    <button onclick="playSong('piosenka1.mp3')">Piosenka 1</button>
-    <button onclick="playSong('piosenka2.mp3')">Piosenka 2</button>
-    <button onclick="playSong('piosenka3.mp3')">Piosenka 3</button>
-  </div>
-
-  <audio id="audioPlayer" controls>
-    Twoja przeglądarka nie wspiera odtwarzacza audio.
-  </audio>
-
-  <script>
-    const player = document.getElementById('audioPlayer');
-
-    function playSong(filename) {
-      player.src = filename;
-      player.play();
-    }
-  </script>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm mt-16 fade-in">
+    <div class="space-x-4">
+      <a href="tos.html" class="hover:text-white transition underline">Terms of Service</a>
+      <a href="privacy.html" class="hover:text-white transition underline">Privacy Policy</a>
+      <a href="https://discord.com/invite/your-invite-code" target="_blank" class="inline-flex items-center space-x-1 hover:text-white transition underline">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord" class="w-4 h-4 invert" />
+        <span>Discord</span>
+      </a>
+    </div>
+    <p class="mt-4 text-gray-500">&copy; 2025 My Discord Radio. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
